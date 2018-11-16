@@ -16,7 +16,10 @@ public class UserDaoImpl extends GenericServiceImpl implements UserDao{
 	@Override
 	public int addUser(User user) throws DbException {
 		// TODO Auto-generated method stub
-		genericDao.save(user);
+		User save = genericDao.save(user);
+		if(save != null) {
+			return 1;
+		}
 		return 0;
 	}
 

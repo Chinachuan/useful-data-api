@@ -20,16 +20,22 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int addUser() throws DbException {
+		int code = (int) (Math.random() * 100000000);
+		String randomCode = String.valueOf(code);
+		
+		int call = (int) (Math.random() * 10000000);
+		String randomCall = String.valueOf(call);
+		
 		User user = new User();
-		user.setCardNo("622133201");
-		user.setEmail("756663562@qq.com");
+		user.setCardNo(Long.toString(System.currentTimeMillis()));
+		user.setEmail(randomCode + "@qq.com");
 		user.setCreateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-		user.setUsername("龚霞");
-		user.setShowname("你的样子");
-		user.setIphone("13688734882");
-		user.setQqCode("387483762");
-		userDao.addUser(user);
-		return 0;
+		user.setUsername("张三"+randomCode);
+		user.setShowname("LZ"+randomCode);
+		user.setIphone("136"+randomCall);
+		user.setQqCode(randomCode);
+		int flag = userDao.addUser(user);
+		return flag;
 	}
 
 }
