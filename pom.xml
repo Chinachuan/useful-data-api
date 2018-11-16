@@ -3,4 +3,106 @@
   <groupId>com.useful</groupId>
   <artifactId>useful-data-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <name>useful-data-api</name>
+  
+   <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
+	<properties>
+		<java.version>1.7</java.version>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencies>
+	
+		<!-- spring-boot-starter 模板：核心模块，包括自动配置支持、日志和YAML -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- spring-boot-starter-web 模块：web模块 -->
+         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+	
+		<!-- hirbernate 依赖  -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        
+        <!-- mysql依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        
+        <!-- Druid是目前最好的数据库连接池,在功能、性能、扩展性方面,都超过其他数据库连接池 -->
+         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.19</version>
+        </dependency>
+        
+        <!-- 这个需要为 true 热部署才有效 -->
+		<!-- <dependency>
+	         <groupId>org.springframework.boot</groupId>
+	         <artifactId>spring-boot-devtools</artifactId>
+	         <optional>true</optional> 
+	     </dependency> -->
+	     
+	     <dependency>
+			<groupId>com.useful</groupId>
+			<artifactId>useful-db-support</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		 </dependency>
+		 
+		 <dependency>
+		 	  <groupId>com.useful</groupId>
+			  <artifactId>useful-entity</artifactId>
+			  <version>0.0.1-SNAPSHOT</version>
+		 </dependency>
+		 
+		 <dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		</dependency>
+		
+		<!-- 隔离测试 -->
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-all</artifactId>
+		    <version>1.10.19</version>
+		</dependency>
+		
+		<dependency>
+			 <groupId>com.useful</groupId>
+			  <artifactId>useful-api</artifactId>
+			  <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+        
+	</dependencies>
+	
+	 <build>
+        <defaultGoal>spring-boot:run</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                	<uriEncoding>utf-8</uriEncoding>
+                    <executable>true</executable>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+  
 </project>
