@@ -19,7 +19,6 @@ public class UserApi implements UserHander{
 	private UserService userService;
 
 	@Override
-//	@ResponseBody
 	@RequestMapping(value = "/adduser",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
 	public BaseApiResult adduser(String userName){
 		// TODO Auto-generated method stub
