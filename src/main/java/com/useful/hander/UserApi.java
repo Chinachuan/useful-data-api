@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.useful.api.BaseApiResult;
 import com.useful.api.user.UserHander;
 import com.useful.data.service.UserService;
+import com.useful.entity.user.User;
 import com.useful.support.DbException;
 
 @RestController
@@ -24,7 +25,10 @@ public class UserApi implements UserHander{
 		// TODO Auto-generated method stub
 		BaseApiResult result = new BaseApiResult();
 		try {
-			int flag = userService.addUser();
+			User user = new User();
+			user.setUsername(null);
+			user.setEmail("6666666@qq.com");
+			int flag = userService.addUser(user);
 			if(flag == 1) {
 				result.setMesg("添加成功");
 				result.setSucc(true);
