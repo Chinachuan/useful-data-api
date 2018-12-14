@@ -26,7 +26,9 @@ public class UserApi implements UserHander{
 		BaseApiResult result = new BaseApiResult();
 		try {
 			User user = new User();
-			user.setUsername(null);
+//			user.setUsername(null);
+			
+			user.setUsername("测试员01");
 			user.setEmail("6666666@qq.com");
 			int flag = userService.addUser(user);
 			if(flag == 1) {
